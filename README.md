@@ -16,5 +16,5 @@ java -cp split.jar nicelee.file.FileSpliter "D:\Workspace\GitWorkspace\0_coding.
 
 ## UI模式:  
     直接双击,或者参考[ui-run.bat](release/ui-run.bat)  
-    ![](https://raw.githubusercontent.com/nICEnnnnnnnLee/FileSpliter/master/release/sample.png)
+    ![sample](https://raw.githubusercontent.com/nICEnnnnnnnLee/FileSpliter/master/release/sample.png)
     
