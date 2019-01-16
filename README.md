@@ -5,11 +5,11 @@
 ## 命令行模式:   
     参考[cmd-run.bat](https://raw.githubusercontent.com/nICEnnnnnnnLee/FileSpliter/master/release/cmd-run.bat)
 e.g.  
-1. Split
+1. Split  
 ``` dos
 java -cp split.jar nicelee.file.FileSpliter "D:\Workspace\GitWorkspace\0_coding.net\blog\sources\pics\sample.png" 3
 ```
-2. Merge
+2. Merge  
 ``` dos
 java -cp split.jar nicelee.file.FileSpliter "D:\Workspace\GitWorkspace\0_coding.net\blog\sources\pics\split"
 ```

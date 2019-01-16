@@ -20,7 +20,6 @@ import javax.swing.SwingConstants;
 import nicelee.ui.thread.MergeThread;
 import nicelee.ui.thread.SplitThread;
 
-//1.创建名为Login的类，在该类中创建一个名为InitUI的方法，图形界面就在此方法中实现
 public class MainFrame extends JFrame implements ActionListener{
 
 	/**
@@ -42,9 +41,7 @@ public class MainFrame extends JFrame implements ActionListener{
 	}
 
 	public void InitUI() {
-		// 1.1创建一个顶级容器，也就是空白窗口，并为此窗口设置属性（窗口名称，大小，显示位置，关闭设置）
 
-		// 用Jthis创建一个名为this的顶级容器，需要添加的包名为javax.swing.Jthis
 		// 设置窗口名称
 		this.setTitle("文件分割器");
 		// 设置窗口大小
@@ -58,29 +55,27 @@ public class MainFrame extends JFrame implements ActionListener{
 		ImageIcon icon=new ImageIcon(iconURL);
 		this.setIconImage(icon.getImage());
 
-		// 1.2设置窗体上组件的布局，此处使用流式布局FlowLayout，流式布局类似于word的布局
-		// 用FlowLayout创建一个名为f1的对象,需要添加的包名为java.awt.FlowLayout，其中LEFT表示左对齐，CENTER表示居中对齐，RIGHT表示右对齐
+		// 此处使用流式布局FlowLayout，流式布局类似于word的布局
 		FlowLayout f1 = new FlowLayout(FlowLayout.LEFT);
 		// this窗口设置为f1的流式左对齐
 		this.setLayout(f1);
 
 		JLabel tmp0 = new JLabel();
-		// 设置空JLabel长度大小，此处不能使用setSize设置大小，setSize只能设置顶级容器大小，此处用setPreferredSize，Dimension给出大小，需要添加的包名为java.awt.Dimension.
+		// 设置空JLabel长度大小.
 		tmp0.setPreferredSize(new Dimension(80, 90));
 		// 将空JLabel添加入窗口
 		this.add(tmp0);
-		// 在添加图片之前，先把图片从磁盘中加载到内存中来，使用ImageIcon，需要添加的包名为javax.swing.ImageIcon,括号中为图片路径，路径中要使用”/”,不能使用”\”
+		
 		URL fileURL=this.getClass().getResource("/resources/title.png"); 
 		ImageIcon imag1 = new ImageIcon(fileURL);
-		// JLabel可在顶级容器中添加图片文字，需要添加的包名javax.swing.JLabel,此处将上面加载的图片创建为一个JLabel对象
 		JLabel pic1 = new JLabel(imag1, SwingConstants.LEFT);
 		pic1.setPreferredSize(new Dimension(610, 90));
 		// 将创建的图片对象添加到 窗口上
 		this.add(pic1);
 
-		// 创建一个空的JLabel，它的长度宽度为110,30，因为窗口是流式左对齐，为了将”账号”一栏添加在正中间，所以左侧由空的JLabel填充
+		// 创建一个空的JLabel，它的长度宽度为110,30
 		JLabel name1 = new JLabel();
-		// 设置空JLabel长度大小，此处不能使用setSize设置大小，setSize只能设置顶级容器大小，此处用setPreferredSize，Dimension给出大小，需要添加的包名为java.awt.Dimension.
+		// 设置空JLabel长度大小
 		name1.setPreferredSize(new Dimension(110, 30));
 		// 将空JLabel添加入窗口
 		this.add(name1);
@@ -95,7 +90,7 @@ public class MainFrame extends JFrame implements ActionListener{
 		// 添加到窗口上
 		this.add(fileText);
 
-		// JButton创建一个可点击的按钮，按钮上可显示文本图片
+		// JButton创建一个可点击的按钮
 		btnSplitFileChooser.addActionListener(this);
 		btnSplitFileChooser.setPreferredSize(new Dimension(20, 30));
 		this.add(btnSplitFileChooser);
@@ -148,7 +143,7 @@ public class MainFrame extends JFrame implements ActionListener{
 		this.add(name5);
 		consoleArea.setEditable(false);
 		JScrollPane js=new JScrollPane(consoleArea);
-		//分别设置水平和垂直滚动条自动出现
+		//分别设置水平和垂直滚动条出现方式
 		js.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		js.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		this.add(js);
@@ -158,7 +153,6 @@ public class MainFrame extends JFrame implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		// 当按下选择按钮，打开一个文件选择，文本框显示文件路径
 		if (e.getSource() == btnSplitFileChooser) {
 			JFileChooser fileChooser = new JFileChooser(".");
 			fileChooser.setDialogTitle("请选择要分解的文件...");
